@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Weather App</h1>
+        <form action="/" method="POST">
+            <input type="text" name="city" placeholder="Enter city name" required><br>
+            <button type="submit">Get Weather</button>
+        </form>
+
+        <% if (error) { %>
+            <p class="error"><%= error %></p>
+        <% } %>
+
+        <% if (weather) { %>
+            <div class="weather-info">
+                <h2><%= weather.city %></h2>
+                <img src="bgimg1.jpg" height="50" width="60" alt="Weather Icon">
+                <p>Temperature: <%= weather.temp %>°C</p>
+                <p>Condition: <%= weather.description %></p>
+            </div>
+        <% } %>
+    </div>
+</body>
+</html>
